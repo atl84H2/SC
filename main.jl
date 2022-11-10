@@ -305,11 +305,11 @@ begin
 	fig51 = Figure()
 	ax51 = Axis(fig51[1,1],
 		title="Зависимости температур истощения примесей от температуры образца",
-		xlabel="Температура материала, К",
+		xlabel="Температура образца, К",
 		ylabel="Температура истощения примеси, К")
 	lines!(ax51,T,TSn.(T),color=:red,label="Донорная")
 	lines!(ax51,T,TSp.(T),color=:blue,label="Акцепторная")
-	#axislegend(ax51,position=:rt)
+	axislegend(ax51,position=:rt)
 	#limits!(ax51, 0, 300,)
 	xlims!(ax51,0,1000)
 	fig51
@@ -338,12 +338,11 @@ begin
 	fig52 = Figure()
 	ax52 = Axis(fig52[1,1],
 		title="Зависимости температур собственной проводимости от температуры образца",
-		xlabel="Температура материала, К",
+		xlabel="Температура образца, К",
 		ylabel="Температура собственной проводимости, К")
-	lines!(ax52,T,Tin.(T),color=:red,label="n-область")
-	lines!(ax52,T,Tip.(T),color=:blue,label="p-область")
-	#axislegend(ax52,position=:rt)
-	#limits!(ax52, 0, 300,)
+	lines!(ax52,T,Tin.(T),color=:blue,label="n-область")
+	lines!(ax52,T,Tip.(T),color=:red,label="p-область")
+	axislegend(ax52,position=:rt)
 	xlims!(ax52,0,1000)
 	fig52
 end
